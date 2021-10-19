@@ -4,20 +4,6 @@ import java.util.Date;
 
 public class Users{
 	
-	public Users() {
-		Instructor i0 = new Instructor("I0");
-		Instructor i1 = new Instructor("I1");
-		GClass.Ilist.add(i0);
-		GClass.Ilist.add(i1);
-		
-		Student s0 = new Student("S0");
-		Student s1 = new Student("S1");
-		Student s2 = new Student("S2");
-		GClass.Slist.add(s0);
-		GClass.Slist.add(s1);
-		GClass.Slist.add(s2);
-	}
-	
 	protected String getTimeStamp() {
 		Date date = new Date();  
         Timestamp ts=new Timestamp(date.getTime());  
@@ -30,11 +16,13 @@ public class Users{
 	public void viewLecture() {
 		// TODO Auto-generated method stub
 		int flag = 0;
+		int count;
 		for(Slides x: GClass.SlideL) {
 			System.out.println();
 			System.out.println("Title: " + x.topic);
 			for(int i = 0; i<x.content.size(); i++) {
-				System.out.println("Slide "+ i + x.content.get(i));
+				count = i+1;
+				System.out.println("Slide "+ count +": "+ x.content.get(i));
 			}
 			System.out.println("Number of Slides: "+ x.num);
 			System.out.println("Date of upload: "+ x.upload);
@@ -77,8 +65,5 @@ public class Users{
 			System.out.println("No Commnets Added");
 		}
 	}
-
-	
-	
 	
 }

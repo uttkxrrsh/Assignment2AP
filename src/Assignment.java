@@ -2,7 +2,7 @@ import java.util.*;
 public class Assignment implements Assessment {
 	private String status;
 	private String problem;
-	public int max;
+	private int max;
 	private String type;
 	ArrayList<Integer> submission = new ArrayList<>();
 	ArrayList<Integer> gradstatus = new ArrayList<>();
@@ -14,6 +14,7 @@ public class Assignment implements Assessment {
 		this.status = "OPEN";
 		this.problem = problem;
 		this.type = type;
+		this.max = max;
 		for(int i = 0; i<3; i++) {
 			submission.add(0);
 			gradstatus.add(0);

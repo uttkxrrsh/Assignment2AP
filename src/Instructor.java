@@ -37,7 +37,7 @@ public class Instructor extends Users {
 		String c;
 		System.out.print("Enter comment: ");
 		c = GClass.sc.nextLine();
-		c = c + " - "+ this.name + "\n" + getTimeStamp();
+		c = c + " - "+ this.name + "\n" + getTimeStamp() + " 2021";
 		GClass.CList.add(c);
 	}
 	
@@ -105,14 +105,14 @@ public class Instructor extends Users {
 				System.out.println("-------------------------------");
 				flag = 1;
 			}
-			if(flag == 0) {
-				System.out.println("No Open Assignments");
-			}
-			else {
-				System.out.print("Enter id of assignment to close: ");
-				id = Integer.parseInt(GClass.sc.nextLine());
-				GClass.AList.get(id).chStatus();
-			}
+		}
+		if(flag == 0) {
+			System.out.println("No Open Assignments");
+		}
+		else {
+			System.out.print("Enter id of assignment to close: ");
+			id = Integer.parseInt(GClass.sc.nextLine());
+			GClass.AList.get(id).chStatus();
 		}
 	}
 	

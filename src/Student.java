@@ -10,7 +10,7 @@ public class Student extends Users {
 		String c;
 		System.out.print("Enter comment: ");
 		c = GClass.sc.nextLine();
-		c = c + " - "+ this.name + "\n" + getTimeStamp();
+		c = c + " - "+ this.name + "\n" + getTimeStamp() + " 2021";
 		GClass.CList.add(c);
 	}
 	
@@ -57,6 +57,23 @@ public class Student extends Users {
 				sol = GClass.sc.nextLine();
 				GClass.AList.get(choice).sub.set(id, sol);
 				GClass.AList.get(choice).submission.set(id, 1);
+			}
+		}
+	}
+	
+	public void viewGrades(int id) {
+		System.out.println("Graded submissions");
+		for(Assignment a : GClass.AList) {
+			if(a.gradstatus.get(id) == 1) {
+				System.out.println("Submission: "+ a.sub.get(id)+ "\n"
+						+ "Marks scored: "+ a.grade.get(id) +"\n"
+						+ "Graded by: " + a.grader.get(id));
+			}
+		}
+		System.out.println("Ungraded submissions");
+		for(Assignment a : GClass.AList) {
+			if(a.gradstatus.get(id) == 0 && a.submission.get(id) == 1) {
+				System.out.println("Submission: "+ a.sub.get(id)+ "\n");
 			}
 		}
 	}
